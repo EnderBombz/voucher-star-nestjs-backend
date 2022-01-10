@@ -31,9 +31,20 @@ export class BadgeService {
       throw err;
     }
   }
+
   async sendVouchersById(body) {
     try {
       const { list, voucher } = body;
+
+      if (!list || !voucher) {
+        return {
+          error:
+            'You must inform the recipient list, to send the voucher data and what is the gift that will be delivered to the colaborators.',
+          status: 404,
+          method: 'POST',
+        };
+      }
+
       const jsonList = JSON.parse(list);
 
       if (jsonList != undefined) {
@@ -67,6 +78,16 @@ export class BadgeService {
   async sendVouchersByRegistration(body) {
     try {
       const { list, voucher } = body;
+
+      if (!list || !voucher) {
+        return {
+          error:
+            'You must inform the recipient list, to send the voucher data and what is the gift that will be delivered to the colaborators.',
+          status: 404,
+          method: 'POST',
+        };
+      }
+
       const jsonList = JSON.parse(list);
 
       if (jsonList != undefined) {

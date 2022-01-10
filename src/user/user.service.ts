@@ -122,7 +122,6 @@ export class UserService {
       console.debug(err);
     }
   }
-
   async updateVouchersById(id: string, voucherList: []) {
     const data = await this.userModel.updateOne(
       { _id: id },
@@ -156,7 +155,6 @@ export class UserService {
     );
     return data;
   }
-
   async deleteById(id) {
     return this.userModel.deleteOne({ _id: id }).exec();
   }
