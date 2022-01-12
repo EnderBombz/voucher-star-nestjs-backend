@@ -7,6 +7,7 @@ import { BadgeModule } from './badge/badge.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
+import { VoucherModule } from './voucher/voucher.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { AuthModule } from './auth/auth.module';
     AccountModule,
     BadgeModule,
     AuthModule,
+    VoucherModule,
   ],
   controllers: [AppController],
   providers: [AppService],
